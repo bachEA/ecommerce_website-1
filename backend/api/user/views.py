@@ -21,6 +21,8 @@ def generate_session_token(length=10):
 # Define the sign in method
 @csrf_exempt
 def signin(request):
+
+    # only accept a post request
     if not request.method == 'POST':
         return JsonResponse({'error': 'Send a post request with valid paramenter only'})
 

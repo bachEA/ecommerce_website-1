@@ -36,6 +36,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = CustomUser
 
         # add your extra parameters that you want to add or modify
+        # set password to write only so that it is not shown in the api
         extra_kwargs = {'password': {'write_only': True}}
         fields = ('name', 'email', 'password', 'phone', 'gender',
                   'is_active', 'is_staff', 'is_superuser')
